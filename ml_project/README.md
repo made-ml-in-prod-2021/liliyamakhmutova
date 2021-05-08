@@ -78,3 +78,7 @@ Project Organization
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
 See https://nsls-ii.github.io/scientific-python-cookiecutter/preliminaries.html and https://drivendata.github.io/cookiecutter-data-science/ 
+
+
+
+## Self-assessment is in pull request ## 
