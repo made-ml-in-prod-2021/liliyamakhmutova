@@ -13,9 +13,9 @@ from src.enities import (
     FeatureParams,
     TrainingParams,
 )
-from ..tests.features import categorical_features, features_to_drop, numerical_features, target_col, feature_params
-from ..tests.data import DEFAULT_GENERATED_DATA_NAME
-from ..tests import gen_synthetic_data
+from tests.features import categorical_features, features_to_drop, numerical_features, target_col, feature_params
+from tests.data import DEFAULT_GENERATED_DATA_NAME
+from tests import gen_synthetic_data
 
 
 @pytest.fixture
