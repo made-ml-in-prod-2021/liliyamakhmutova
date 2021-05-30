@@ -18,7 +18,6 @@ class TrainingPipelineParams:
     feature_params: FeatureParams
 
 
-
 TrainingPipelineParamsSchema = class_schema(TrainingPipelineParams)
 
 

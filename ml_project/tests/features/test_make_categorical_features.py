@@ -4,8 +4,10 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from src.features.build_features import process_categorical_features, process_numerical_features, extract_target, drop_columns
+from src.features.build_features import process_categorical_features, process_numerical_features, extract_target, \
+    drop_columns
 from src.enities.feature_params import FeatureParams
+
 
 @pytest.fixture()
 def categorical_feature() -> str:
@@ -24,15 +26,15 @@ def categorical_values_with_nan(categorical_values: List[str]) -> List[str]:
 
 @pytest.fixture
 def fake_categorical_data(
-    categorical_feature: str, categorical_values_with_nan: List[str]
+        categorical_feature: str, categorical_values_with_nan: List[str]
 ) -> pd.DataFrame:
     return pd.DataFrame({categorical_feature: categorical_values_with_nan})
 
 
 def test_process_categorical_features(
-    fake_categorical_data: pd.DataFrame,
-    categorical_feature: str,
-    categorical_values: List[str],
+        fake_categorical_data: pd.DataFrame,
+        categorical_feature: str,
+        categorical_values: List[str],
 ):
     print(fake_categorical_data)
     transformed: pd.DataFrame = process_categorical_features(fake_categorical_data)
@@ -57,17 +59,17 @@ def numerical_values_with_nan(numerical_values: List[float]) -> List[float]:
 
 @pytest.fixture
 def fake_numerical_data(
-    numerical_feature: str, numerical_values_with_nan: List[float]
+        numerical_feature: str, numerical_values_with_nan: List[float]
 ) -> pd.DataFrame:
     return pd.DataFrame({numerical_feature: numerical_values_with_nan}, index=range(0, len(numerical_values_with_nan)))
 
 
 def test_process_numerical_features(
-    fake_numerical_data: pd.DataFrame,
+        fake_numerical_data: pd.DataFrame,
 ):
     transformed: pd.DataFrame = process_numerical_features(fake_numerical_data)
-    assert transformed.shape == fake_numerical_data.shape # shape is immutable
-    assert transformed.sum().sum() == 0 # StandardScaler
+    assert transformed.shape == fake_numerical_data.shape  # shape is immutable
+    assert transformed.sum().sum() == 0  # StandardScaler
 
 
 @pytest.fixture()
@@ -82,7 +84,7 @@ def target_values() -> List[int]:
 
 @pytest.fixture
 def fake_target_data(
-    target_feature: str, target_values: List[float]
+        target_feature: str, target_values: List[float]
 ) -> pd.DataFrame:
     df = pd.DataFrame(target_values)
     df.columns = [target_feature]
@@ -91,14 +93,15 @@ def fake_target_data(
 
 @pytest.fixture
 def feature_params(target_feature) -> FeatureParams:
-    return FeatureParams(use_log_trick=False, target_col=target_feature, categorical_features=[], numerical_features=[], features_to_drop=[target_feature])
+    return FeatureParams(use_log_trick=False, target_col=target_feature, categorical_features=[], numerical_features=[],
+                         features_to_drop=[target_feature])
 
 
 def test_extract_target(
-    fake_target_data: pd.DataFrame,
-    target_values: List[int],
-    target_feature: str,
-    feature_params: FeatureParams
+        fake_target_data: pd.DataFrame,
+        target_values: List[int],
+        target_feature: str,
+        feature_params: FeatureParams
 ):
     target: pd.DataFrame = extract_target(fake_target_data, feature_params)
     comparison = (target.to_numpy() == np.array(target_values))
@@ -106,13 +109,10 @@ def test_extract_target(
 
 
 def test_drop_column(
-    fake_target_data: pd.DataFrame,
-    target_values: List[int],
-    target_feature: str,
-    feature_params: FeatureParams
+        fake_target_data: pd.DataFrame,
+        target_values: List[int],
+        target_feature: str,
+        feature_params: FeatureParams
 ):
     dropped: pd.DataFrame = drop_columns(fake_target_data, feature_params)
     assert dropped.empty
-
-
-

@@ -31,7 +31,7 @@ def test_read_data_csv():
 
 def test_split_train_val_data(data):
     val_size = 0.2
-    splitting_params = SplittingParams(random_state=1234, val_size=val_size,)
+    splitting_params = SplittingParams(random_state=1234, val_size=val_size, )
     train, val = split_train_val_data(data, splitting_params)
     assert val_size * train.shape[0] - val.shape[0] < 2
     assert train.shape[0] < DEFAULT_DATA_SIZE

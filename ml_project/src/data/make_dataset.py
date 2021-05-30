@@ -13,7 +13,7 @@ def read_data(path: str) -> pd.DataFrame:
 
 
 def split_train_val_data(
-    data: pd.DataFrame, params: SplittingParams
+        data: pd.DataFrame, params: SplittingParams
 ) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """
 

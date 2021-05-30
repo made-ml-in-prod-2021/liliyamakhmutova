@@ -7,19 +7,18 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
 
-
 SklearnClassifierModel = Union[LogisticRegression, DecisionTreeClassifier]
 
 
 def train_model(
-    features: pd.DataFrame, target: pd.Series, model: SklearnClassifierModel
+        features: pd.DataFrame, target: pd.Series, model: SklearnClassifierModel
 ) -> SklearnClassifierModel:
     model.fit(features, target)
     return model
 
 
 def predict_model(
-    model: SklearnClassifierModel, features: pd.DataFrame, use_log_trick: bool = True
+        model: SklearnClassifierModel, features: pd.DataFrame, use_log_trick: bool = True
 ) -> np.ndarray:
     predicts = model.predict(features)
     if use_log_trick:
@@ -28,7 +27,7 @@ def predict_model(
 
 
 def evaluate_model(
-    predicts: np.ndarray, target: pd.Series, use_log_trick: bool = False
+        predicts: np.ndarray, target: pd.Series, use_log_trick: bool = False
 ) -> Dict[str, float]:
     if use_log_trick:
         target = np.exp(target)

@@ -4,7 +4,7 @@ import random
 
 def gen_random_in_range(range_tuple: tuple):
     if (isinstance(range_tuple[0], float)):
-        return round(random.uniform(range_tuple[0], range_tuple[1]),1)
+        return round(random.uniform(range_tuple[0], range_tuple[1]), 1)
     return random.randint(range_tuple[0], range_tuple[1])
 
 

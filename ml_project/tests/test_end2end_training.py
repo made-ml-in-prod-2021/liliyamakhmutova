@@ -23,14 +23,13 @@ def dataset_path(tmpdir: LocalPath) -> str:
     return DEFAULT_GENERATED_DATA_NAME
 
 
-
 def test_train_e2e(
-    tmpdir: LocalPath,
-    dataset_path: str,
-    categorical_features: List[str],
-    numerical_features: List[str],
-    target_col: str,
-    features_to_drop: List[str],
+        tmpdir: LocalPath,
+        dataset_path: str,
+        categorical_features: List[str],
+        numerical_features: List[str],
+        target_col: str,
+        features_to_drop: List[str],
 ):
     expected_output_model_path = tmpdir.join("model.pkl")
     expected_metric_path = tmpdir.join("metrics.json")

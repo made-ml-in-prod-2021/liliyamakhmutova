@@ -15,7 +15,7 @@ from .. import gen_synthetic_data
 
 @pytest.fixture()
 def categorical_features() -> str:
-    return ["sex", "cp", "restecg", "exang",  "slope", "ca", "thal"]
+    return ["sex", "cp", "restecg", "exang", "slope", "ca", "thal"]
 
 
 @pytest.fixture()
@@ -25,7 +25,7 @@ def features_to_drop() -> str:
 
 @pytest.fixture()
 def numerical_features() -> str:
-    return ["age", "trestbps", "chol", "thalach","oldpeak"]
+    return ["age", "trestbps", "chol", "thalach", "oldpeak"]
 
 
 @pytest.fixture()
@@ -35,10 +35,10 @@ def target_col() -> str:
 
 @pytest.fixture
 def feature_params(
-    categorical_features: List[str],
-    features_to_drop: List[str],
-    numerical_features: List[str],
-    target_col: str,
+        categorical_features: List[str],
+        features_to_drop: List[str],
+        numerical_features: List[str],
+        target_col: str,
 ) -> FeatureParams:
     params = FeatureParams(
         categorical_features=categorical_features,
@@ -51,7 +51,7 @@ def feature_params(
 
 
 def test_make_features(
-    feature_params: FeatureParams, data: pd.DataFrame,
+        feature_params: FeatureParams, data: pd.DataFrame,
 ):
     transformer = build_transformer(feature_params)
     transformer.fit(data)
@@ -65,4 +65,3 @@ def test_extract_features(feature_params: FeatureParams, data: pd.DataFrame):
     assert_allclose(
         np.log(data[feature_params.target_col].to_numpy()), target.to_numpy()
     )
-

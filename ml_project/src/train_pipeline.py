@@ -100,12 +100,14 @@ def train_pipeline_command(config_path: str):
     if model_type == "LogisticRegression":
         model_params = read_model_logistic_regression_params(config_path)
         model = LogisticRegression(
-            C=model_params.C, solver=model_params.solver, max_iter=model_params.max_iter, random_state=params.train_params.random_state
+            C=model_params.C, solver=model_params.solver, max_iter=model_params.max_iter,
+            random_state=params.train_params.random_state
         )
     elif model_type == "DecisionTreeClassifier":
         model_params = read_model_decision_tree_classifier_params(config_path)
         model = DecisionTreeClassifier(
-            criterion=model_params.criterion, max_depth=model_params.max_depth, random_state=params.train_params.random_state)
+            criterion=model_params.criterion, max_depth=model_params.max_depth,
+            random_state=params.train_params.random_state)
     else:
         raise NotImplementedError()
 

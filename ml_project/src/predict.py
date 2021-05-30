@@ -19,7 +19,6 @@ from src.features import make_features
 from src.features.build_features import extract_target, build_transformer, drop_columns
 from src.models import predict_model
 
-
 APPLICATION_NAME = "ml_project"
 logger = logging.getLogger(APPLICATION_NAME)
 
