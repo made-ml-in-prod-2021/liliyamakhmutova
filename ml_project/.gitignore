@@ -20,6 +20,7 @@ parts/
 sdist/
 var/
 logs/
+outputs/
 src.egg-info/
 *.egg-info/
 .installed.cfg
