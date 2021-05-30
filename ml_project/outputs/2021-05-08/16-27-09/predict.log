@@ -1,5 +1,0 @@
-[2021-05-08 16:27:09,155][ml_project][INFO] - pretrained model DecisionTreeClassifier(criterion='entropy', max_depth=200, random_state=1234) extracted
-[2021-05-08 16:27:09,155][ml_project][INFO] - start predict pipeline with params {'input_data_path': 'data/raw/heart.csv', 'output_model_path': 'models/model.pkl', 'metric_path': 'models/metrics.json', 'pretrained_model_path': 'models/model.pkl', 'predictions_path': 'data/predicted/predictions.csv', 'splitting_params': {'val_size': 0.2, 'random_state': 1234}, 'train_params': {'model_type': 'DecisionTreeClassifier', 'random_state': 1234}, 'feature_params': {'use_log_trick': False, 'categorical_features': ['sex', 'cp', 'restecg', 'exang', 'slope', 'ca', 'thal'], 'numerical_features': ['age', 'trestbps', 'chol', 'thalach', 'oldpeak'], 'features_to_drop': ['fbs'], 'target_col': 'target'}}
-[2021-05-08 16:27:09,208][ml_project][INFO] - data.shape is (303, 14)
-[2021-05-08 16:27:09,208][ml_project][INFO] - data.shape after dropping some columns is (303, 13)
-[2021-05-08 16:27:09,255][ml_project][INFO] - predictions are written to data/predicted/predictions.csv
