@@ -39,8 +39,6 @@ Project Organization
     │   ├── raw            <- The original, immutable data dump.
     │   └── predicted      <- Predictions
     │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
     ├── logs               <- Log files
     │
     ├── models             <- Trained and serialized models, model predictions, or model summaries
@@ -48,11 +46,6 @@ Project Organization
     ├── notebooks          <- Jupyter notebooks. 
     │
     ├── outputs            <- Hydra outputs.        
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
     │
     ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
     │                         generated with `pip freeze > requirements.txt`
@@ -86,3 +79,6 @@ Project Organization
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
 See https://nsls-ii.github.io/scientific-python-cookiecutter/preliminaries.html and https://drivendata.github.io/cookiecutter-data-science/ 
 
+
+
+## Self-assessment is in pull request ## 
